@@ -17,7 +17,8 @@
                 <p><strong>Writers: </strong>{{$comic->writers}}</p>
             </div>
             <a href="#" class="btn btn-warning">
-                <i class="fa-solid fa-pen"></i> <strong>Edit</strong>
+                <i class="fa-solid fa-pen"></i>
+                <strong>Edit</strong>
             </a>
         </div>
 

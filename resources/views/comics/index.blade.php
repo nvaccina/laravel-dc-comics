@@ -24,7 +24,8 @@
                         <td>{{$comic->series}}</td>
                         <td>{{$comic->type}}</td>
                         <th scope="col">
-                            <a class="btn btn-primary" href="{{route('comics.show', $comic)}}"><i class="fa-solid fa-info p-1"></i>
+                            <a class="btn btn-primary" href="{{route('comics.show', $comic)}}">
+                                <i class="fa-solid fa-info p-1"></i>
                             </a>
                             <a class="btn btn-warning" href="#">
                                 <i class="fa-solid fa-pen"></i>
