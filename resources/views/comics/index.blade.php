@@ -9,6 +9,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">Id</th>
                     <th scope="col">Title</th>
                     <th scope="col">Series</th>
                     <th scope="col">Type</th>
@@ -18,14 +19,18 @@
             <tbody>
                 @foreach ($comics as $comic)
                     <tr>
-                        <th scope="row">{{$comic->title}}</th>
+                        <th scope="row">{{$comic->id}}</th>
+                        <td>{{$comic->title}}</td>
                         <td>{{$comic->series}}</td>
                         <td>{{$comic->type}}</td>
                         <th scope="col">
-                            <a class="btn btn-primary" href="{{route('comics.show', $comic)}}">Details
+                            <a class="btn btn-primary" href="{{route('comics.show', $comic)}}"><i class="fa-solid fa-info p-1"></i>
                             </a>
-                            <a class="btn btn-secondary" href="#">
-                                <i class="fa-solid fa-pen"></i> Edit
+                            <a class="btn btn-warning" href="#">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
+                            <a class="btn btn-danger" href="#">
+                                <i class="fa-solid fa-trash-can"></i>
                             </a>
                         </th>
                     </tr>
