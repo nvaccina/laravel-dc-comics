@@ -16,18 +16,20 @@
             </div>
         @endif
 
-        <form action="{{route('comics.store')}}" method="POST">
+        <form action="{{route('comics.update', $comic)}}" method="POST">
             @csrf
 
+            @method('PUT')
+
             <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Title (*)</label>
+                <label for="formGroupExampleInput" class="form-label">Title</label>
                 <input
                     type="text"
                     class="form-control"
                     id="formGroupExampleInput"
                     placeholder="Title"
                     name="title"
-                    value="{{old('title')}}"
+                    value="{{old('title', $comic->title)}}"
                 >
                 @error('title')
                     <p class="text-danger py-1">{{$message}}</p>
@@ -35,40 +37,54 @@
             </div>
 
             <div class="mb-3">
-                <label for="thumb" class="form-label">Thumb (*)</label>
-                <input type="text" class="form-control" id="thumb" placeholder="Poster image" name="thumb" value="{{old('thumb')}}">
+                <label for="thumb" class="form-label">Thumb</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="thumb"
+                    placeholder="Thumb image"
+                    name="thumb"
+                    value="{{old('thumb', $comic->thumb)}}"
+                >
                 @error('thumb')
                     <p class="text-danger py-1">{{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="price" class="form-label">Price (*)</label>
-                <input type="text" class="form-control" id="price" placeholder="es. 10.20" name="price" value="{{old('price')}}">
+                <label for="price" class="form-label">Price</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    placeholder="Price"
+                    name="price"
+                    value="{{old('price', $comic->price)}}"
+                >
                 @error('price')
                     <p class="text-danger py-1">{{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="series" class="form-label">Series (*)</label>
-                <input type="text" class="form-control" id="series" placeholder="Series" name="series" value="{{old('series')}}">
+                <label for="series" class="form-label">Series</label>
+                <input type="text" class="form-control" id="series" placeholder="Series" name="series" value="{{old('series', $comic->series)}}">
                 @error('series')
                     <p class="text-danger py-1">{{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="sale_date" class="form-label">Sale date (*)</label>
-                <input type="text" class="form-control" id="sale_date" placeholder="YYYY-MM-DD" name="sale_date" defaul value="{{old('sale_date')}}">
+                <label for="sale_date" class="form-label">Sale date</label>
+                <input type="text" class="form-control" id="sale_date" placeholder="Sale date" name="sale_date" defaul value="{{old('sale_date', $comic->sale_date)}}">
                 @error('sale_date')
                     <p class="text-danger py-1">{{$message}}</p>
                 @enderror
             </div>
 
             <div class="mb-3">
-                <label for="type" class="form-label">Type (*)</label>
-                <input type="text" class="form-control" id="type" placeholder="Type" name="type" value="{{old('type')}}">
+                <label for="type" class="form-label">Type</label>
+                <input type="text" class="form-control" id="type" placeholder="Type" name="type" value="{{old('type', $comic->type)}}">
                 @error('type')
                     <p class="text-danger py-1">{{$message}}</p>
                 @enderror
@@ -77,13 +93,13 @@
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" id="description" cols="30" rows="10" placeholder="Description" name="description">
-                    {{old('description')}}
+                    {{old('description', $comic->description)}}
                 </textarea>
             </div>
 
             <div class="mb-3">
                 <label for="artists" class="form-label">Artists</label>
-                <input type="text" class="form-control" id="artists" placeholder="es. Mario Primo - Giovanni Secondo - Claudio Terzo" name="artists" value="{{old('artists')}}">
+                <input type="text" class="form-control" id="artists" placeholder="Artists" name="artists" value="{{old('artists', $comic->artists)}}">
                 @error('artists')
                     <p class="text-danger py-1">{{$message}}</p>
                 @enderror
@@ -91,7 +107,7 @@
 
             <div class="mb-3">
                 <label for="writers" class="form-label">Writers</label>
-                <input type="text" class="form-control" id="writers" placeholder="es. Mario Primo - Giovanni Secondo - Claudio Terzo" name="writers" value="{{old('writers')}}">
+                <input type="text" class="form-control" id="writers" placeholder="Writers" name="writers" value="{{old('writers', $comic->writers)}}">
                 @error('writers')
                     <p class="text-danger py-1">{{$message}}</p>
                 @enderror

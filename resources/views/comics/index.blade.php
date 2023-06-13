@@ -3,6 +3,7 @@
 @section('content')
 
 <main>
+
     <div class="container py-5">
         <h1>Comics</h1>
 
@@ -27,7 +28,7 @@
                             <a class="btn btn-primary" href="{{route('comics.show', $comic)}}">
                                 <i class="fa-solid fa-info p-1"></i>
                             </a>
-                            <a class="btn btn-warning" href="#">
+                            <a class="btn btn-warning" href="{{route('comics.edit', $comic)}}">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
                             <a class="btn btn-danger" href="#">

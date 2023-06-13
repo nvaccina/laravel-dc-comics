@@ -21,6 +21,7 @@ class ComicRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
+
     public function rules()
     {
         return [
@@ -28,7 +29,7 @@ class ComicRequest extends FormRequest
             'thumb'=> 'required',
             'price'=> 'required|min:1|max:100|decimal:2',
             'series'=> 'required|min:3|max:100',
-            'sale_date'=> 'required|date_equals:2020-06-10|min:5|max:100',
+            'sale_date'=> 'required|date',
             'type'=> 'required|min:3|max:100',
             'artists'=> 'required|min:2|max:255',
             'writers'=> 'required|min:2|max:255'
@@ -67,7 +68,6 @@ class ComicRequest extends FormRequest
             'artists.max' => 'Gli Artisti non possono avere più di :max caratteri',
 
             'writers.required' => 'Gli scrittori sono un campo obbligatorio',
-            //'writers.array' => 'Gli scrittori devono essere scritti separati da uno spazio e un \'-\'',
             'writers.min' => 'Gli scrittori devono avere almeno :min caratteri',
             'writers.max' => 'Gli scrittori non possono avere più di :max caratteri',
         ];

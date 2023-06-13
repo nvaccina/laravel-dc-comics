@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('thumb');
             $table->string('price', 100);
             $table->string('series', 100);
-            $table->date('sale_date', 100);
+            $table->date('sale_date', 100)->default('2020-10-10');
             $table->string('type', 100);
             $table->string('artists');
             $table->string('writers');
