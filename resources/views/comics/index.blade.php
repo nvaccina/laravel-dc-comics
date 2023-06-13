@@ -31,9 +31,17 @@
                             <a class="btn btn-warning" href="{{route('comics.edit', $comic)}}">
                                 <i class="fa-solid fa-pen"></i>
                             </a>
-                            <a class="btn btn-danger" href="#">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </a>
+
+                            <form
+                                action=""
+                                method="POST"
+                                class="d-inline"
+                            >
+                                <buttun type="submit" class="btn btn-danger">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </buttun>
+                            </form>
+
                         </th>
                     </tr>
 

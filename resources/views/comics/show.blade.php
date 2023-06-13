@@ -16,7 +16,7 @@
                 <p><strong>Artists: </strong>{{$comic->artists}}</p>
                 <p><strong>Writers: </strong>{{$comic->writers}}</p>
             </div>
-            <a href="#" class="btn btn-warning">
+            <a href="{{route('comics.edit', $comic)}}" class="btn btn-warning">
                 <i class="fa-solid fa-pen"></i>
                 <strong>Edit</strong>
             </a>

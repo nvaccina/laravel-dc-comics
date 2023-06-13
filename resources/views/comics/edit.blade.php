@@ -4,7 +4,7 @@
 
 <main>
     <div class="container py-5">
-        <h1 class="pb-2">Create a new Comic</h1>
+        <h1 class="pb-2">Edit Comic</h1>
 
         @if($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -114,7 +114,7 @@
             </div>
 
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </div>
 
         </form>

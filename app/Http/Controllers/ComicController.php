@@ -41,7 +41,10 @@ class ComicController extends Controller
         $new_comic = new Comic();
 
         $new_comic->fill($form_data);
+        $new_comic->price = '$' . $new_comic->price;
         $new_comic->save();
+
+
 
         return redirect()->route('comics.show', $new_comic);
     }
@@ -65,6 +68,8 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
+        $comic->price = str_replace("$", "", $comic->price);
+
         return view('comics.edit', compact('comic'));
     }
 
@@ -75,9 +80,15 @@ class ComicController extends Controller
      * @param  \App\Models\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+
+        $comic->update($form_data);
+
+        $comic->price = '$' . $comic->price;
+
+        return view('comics.show', compact('comic'));
     }
 
     /**
@@ -88,6 +99,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comic.index')->with('deleted', "Il Fumetto $comic->title è stato eliminato correttamente");
     }
 }

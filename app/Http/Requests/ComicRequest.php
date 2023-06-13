@@ -27,7 +27,7 @@ class ComicRequest extends FormRequest
         return [
             'title'=> 'required|min:5|max:255',
             'thumb'=> 'required',
-            'price'=> 'required|min:1|max:100|decimal:2',
+            'price'=> 'required|min:1|decimal:2|',
             'series'=> 'required|min:3|max:100',
             'sale_date'=> 'required|date',
             'type'=> 'required|min:3|max:100',
@@ -47,8 +47,7 @@ class ComicRequest extends FormRequest
 
             'price.required' => 'Il Prezzo è un campo obbligatorio',
             'price.min' => 'Il Prezzo deve avere almeno :min caratteri',
-            'price.max' => 'Il Prezzo non può avere più di :max caratteri',
-            'price.decimal' => 'Il Prezzo non può più di :decimal cifre dopo la virgola',
+            'price.decimal' => 'Il Prezzo non può avere più di :decimal cifre dopo la virgola',
 
             'series.required' => 'La Serie è un campo obbligatorio',
             'series.min' => 'La Serie deve avere almeno :min caratteri',
