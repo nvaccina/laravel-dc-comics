@@ -3,7 +3,7 @@
 @section('content')
 
 <main>
-    <div class="container py-5">
+    <div class="container mt-5 p-5 rounded bg-secondary-subtle">
         <h2 class="pb-2">{{$comic->title}}</h2>
         <div>
             <img class="pb-2" src="{{$comic->thumb}}" alt="{{$comic->title}}">
@@ -20,6 +20,22 @@
                 <i class="fa-solid fa-pen"></i>
                 <strong>Edit</strong>
             </a>
+            <form
+                action="{{route('comics.destroy', $comic)}}"
+                method="POST"
+                class="d-inline ms-2"
+                onsubmit="return confirm ('Sei sicuro di voler eliminare il fumetto {{$comic->title}}?')"
+            >
+                @csrf
+                @method('DELETE')
+                <button
+                    type="submit"
+                    class="btn btn-danger"
+                    title="Elimina"
+                >
+                    <i class="fa-solid fa-trash-can"></i> <strong>Delete</strong>
+                </button>
+            </form>
         </div>
 
     </div>

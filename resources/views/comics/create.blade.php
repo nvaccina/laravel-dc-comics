@@ -16,7 +16,8 @@
             </div>
         @endif
 
-        <form action="{{route('comics.store')}}" method="POST">
+        <form action="{{route('comics.store')}}" method="POST" class="p-4 rounded bg-secondary-subtle
+        ">
             @csrf
 
             <div class="mb-3">
@@ -35,7 +36,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="thumb" class="form-label">Thumb (*)</label>
+                <label for="thumb" class="form-label">Poster image (*)</label>
                 <input type="text" class="form-control" id="thumb" placeholder="Poster image" name="thumb" value="{{old('thumb')}}">
                 @error('thumb')
                     <p class="text-danger py-1">{{$message}}</p>
@@ -76,13 +77,13 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" cols="30" rows="10" placeholder="Description" name="description">
+                <textarea class="form-control" id="description" rows="10" placeholder="Description" name="description">
                     {{old('description')}}
                 </textarea>
             </div>
 
             <div class="mb-3">
-                <label for="artists" class="form-label">Artists</label>
+                <label for="artists" class="form-label">Artists (*)</label>
                 <input type="text" class="form-control" id="artists" placeholder="es. Mario Primo - Giovanni Secondo - Claudio Terzo" name="artists" value="{{old('artists')}}">
                 @error('artists')
                     <p class="text-danger py-1">{{$message}}</p>
@@ -90,7 +91,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="writers" class="form-label">Writers</label>
+                <label for="writers" class="form-label">Writers (*)</label>
                 <input type="text" class="form-control" id="writers" placeholder="es. Mario Primo - Giovanni Secondo - Claudio Terzo" name="writers" value="{{old('writers')}}">
                 @error('writers')
                     <p class="text-danger py-1">{{$message}}</p>

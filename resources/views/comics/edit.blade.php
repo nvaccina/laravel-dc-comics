@@ -16,7 +16,8 @@
             </div>
         @endif
 
-        <form action="{{route('comics.update', $comic)}}" method="POST">
+        <form action="{{route('comics.update', $comic)}}" method="POST" class="p-4 rounded bg-secondary-subtle
+        ">
             @csrf
 
             @method('PUT')
@@ -37,12 +38,12 @@
             </div>
 
             <div class="mb-3">
-                <label for="thumb" class="form-label">Thumb</label>
+                <label for="thumb" class="form-label">Poster image</label>
                 <input
                     type="text"
                     class="form-control"
                     id="thumb"
-                    placeholder="Thumb image"
+                    placeholder="Poster image"
                     name="thumb"
                     value="{{old('thumb', $comic->thumb)}}"
                 >
@@ -92,7 +93,7 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" cols="30" rows="10" placeholder="Description" name="description">
+                <textarea class="form-control" id="description" rows="10" placeholder="Description" name="description">
                     {{old('description', $comic->description)}}
                 </textarea>
             </div>
